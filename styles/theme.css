@@ -1,0 +1,14 @@
+@charset "UTF-8";
+a{color:#2b2b2b;}
+a:hover{color:#015293;}
+.forCenter{width: 1200px;overflow: hidden;margin: 0 auto}
+.location{width: 1148px;height: 36px;line-height: 36px;margin: 0 auto;border-bottom: 2px solid #ebebeb;text-indent: 10px;font-size: 16px}
+.pages{padding: 15px 0;color: #ccc;text-align:center;}
+.pages a{display: inline-block;color: #428bca;height: 25px;line-height: 25px;padding: 0 10px;border: 1px solid #ddd;margin: 0 2px;border-radius: 4px;vertical-align: middle;}
+.pages a:hover{text-decoration: none;border: 1px solid #428bca;}
+.pages span{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;vertical-align: middle;}
+.pages span.current{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;}
+.pages span.disabled{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
+.pages span.btn a{display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #428bca;	border: 1px solid #428bca;border-radius: 4px;vertical-align: middle;cursor: pointer}
+.pages span.btn a:hover{text-decoration: none;border: 1px solid #428bca;}
+.pages input[type=text]{display: inline-block;height: 25px;width: 20px;text-align: center;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
