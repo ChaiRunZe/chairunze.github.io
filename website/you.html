@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,user-scalable=no">
+    <title>游在长武</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/xing.css"/>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/flexible.min.js"></script>
+    <script src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+<header>游在长武</header>
+<main>
+<div class="x-box" id="sideMenu">
+    <div class="box-item transit">
+        <h3 class="box-tit"><em></em>公交</h3>
+        <div class="box-con" id="transitBox">
+            <div class="transit-tit">
+                <ul>
+                    <li>1路</li>
+                    <li>2路</li>
+                    <li>3路</li>
+                    <li>4路</li>
+                </ul>
+            </div>
+            <div class="transit-con" id="transitCon">
+                <div class="transit-item">
+                    <p><span class="tit">站点位置：</span>长武长途汽车站--马寨福利院1</p>
+                    <p><span class="tit">班次时间：</span>每15分钟运营一个班次</p>
+                    <p><span class="tit">联系电话：</span>123456789</p>
+                    <p><span class="tit">监督投诉电话：</span>123456789</p>
+                </div>
+                <div class="transit-item">
+                    <p><span class="tit">站点位置：</span>长武长途汽车站--马寨福利院2</p>
+                    <p><span class="tit">班次时间：</span>每15分钟运营一个班次</p>
+                    <p><span class="tit">联系电话：</span>123456789</p>
+                    <p><span class="tit">监督投诉电话：</span>123456789</p>
+                </div>
+                <div class="transit-item">
+                    <p><span class="tit">站点位置：</span>长武长途汽车站--马寨福利院3</p>
+                    <p><span class="tit">班次时间：</span>每15分钟运营一个班次</p>
+                    <p><span class="tit">联系电话：</span>123456789</p>
+                    <p><span class="tit">监督投诉电话：</span>123456789</p>
+                </div>
+                <div class="transit-item">
+                    <p><span class="tit">站点位置：</span>长武长途汽车站--马寨福利院4</p>
+                    <p><span class="tit">班次时间：</span>每15分钟运营一个班次</p>
+                    <p><span class="tit">联系电话：</span>123456789</p>
+                    <p><span class="tit">监督投诉电话：</span>123456789</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            TouchSlide({
+                slideCell: "#transitBox",
+                titCell:".transit-tit li",
+                mainCell:".transit-con",
+                effect:"leftLoop"
+            });
+        </script>
+    </div>
+    <div class="box-item taxi">
+        <h3 class="box-tit"><em></em>出租车</h3>
+        <div class="box-con">2</div>
+    </div>
+    <div class="box-item bus">
+        <h3 class="box-tit"><em></em>客车</h3>
+        <div class="box-con">3</div>
+    </div>
+    <div class="box-item train">
+        <h3 class="box-tit"><em></em>铁路客运</h3>
+        <div class="box-con">4</div>
+    </div>
+    <div class="box-item flight">
+        <h3 class="box-tit"><em></em>航班</h3>
+        <div class="box-con">5</div>
+    </div>
+    <div class="box-item bank">
+        <h3 class="box-tit"><em></em>银行</h3>
+        <div class="box-con">6</div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery("#sideMenu").slide({
+        titCell:".box-tit", //鼠标触发对象
+        targetCell:".box-con", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        trigger:"click",
+        triggerTime:150, //鼠标延迟触发时间（默认150）
+        defaultPlay:true//默认是否执行效果（默认true）
+        //returnDefault:true //鼠标从.sideMen移走后返回默认状态（默认false）
+    });
+</script>
+</main>
+<footer>
+    <ul>
+        <li class="hover"><a href="/website/"><em></em><p>首&nbsp;&nbsp;&nbsp;&nbsp;页</p></a></li>
+        <li><em></em><p>生活资讯</p></li>
+        <li><em></em><p>服务导航</p></li>
+    </ul>
+</footer>
+</body>
+</html>
