@@ -15,7 +15,44 @@
 <body>
 <header>游在长武</header>
 <main>
-
+    <main>
+        <div class="chi-box" id="sideMenu">
+            <div class="box-tit">
+                <ul>
+                    <li><em></em><p>乡村游</p></li>
+                    <li><em></em><p>工业游</p></li>
+                    <li><em></em><p>文化游</p></li>
+                    <li><em></em><p>风光游</p></li>
+                    <li><em></em><p>旅游攻略</p></li>
+                </ul>
+            </div>
+            <div class="box-con">
+                <div class="box-item">
+                    乡村游
+                </div>
+                <div class="box-item">
+                    工业游
+                </div>
+                <div class="box-item">
+                    文化游
+                </div>
+                <div class="box-item">
+                    风光游
+                </div>
+                <div class="box-item">
+                    旅游攻略
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            jQuery("#sideMenu").slide({
+                titCell:".box-tit li", //鼠标触发对象
+                mainCell:".box-con", //
+                delayTime:300 , //效果时间
+                trigger:"click"
+            });
+        </script>
+    </main>
 </main>
 <footer>
     <ul>
