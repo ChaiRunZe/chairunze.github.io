@@ -1,0 +1,21 @@
+<div class="textCenter" style="width: 750px; height: 500px;margin:0 auto;">
+    <div id="mediaplayer" class="textCenter">mediaplayer</div>
+    <script type="text/javascript" src="/wcm.files/js/jwplayer/jwplayer.js"></script>
+    <script type="text/javascript">
+        if("${InfoData.video_path}".indexOf(".flv")>0 || "${InfoData.video_path}".indexOf(".mp4")>0)
+        {
+            jwplayer("mediaplayer").setup({
+                flashplayer: "/wcm.files/js/jwplayer/player.swf",
+                file: "${InfoData.video_path}",
+                image: "${InfoData.thumb_url}",
+                //autostart:true,    //自动播放，默认不自动播放
+                width:750,
+                height:500
+            });
+        }
+        else
+        {
+            $("#mediaplayer").html('<embed id="live_video_embed" width="750" height="500" src="${InfoData.video_path}" mediatype="video" autostart="false" loop="false" menu="true" sck_id="0" type="application/x-mplayer2" ></embed>');
+        }
+    </script>
+</div>
