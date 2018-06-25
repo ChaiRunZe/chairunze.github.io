@@ -11,6 +11,14 @@ header {
     font-size: 0.3rem;
     text-align: center;
 }
+.header-back{
+    height: 0.5rem;
+    width: 0.5rem;
+    float: left;
+    margin: 0.25rem -0.7rem 0.25rem 0.2rem;
+    background: url(../img/theme/header-back.png) center no-repeat;
+    background-size: 100%;
+}
 main{
     width: 100%;
     position: absolute;
