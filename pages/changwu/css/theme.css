@@ -49,6 +49,9 @@ footer ul li em{
     height: 0.65rem;
     margin: 0.1rem auto 0.05rem;
 }
+footer ul li p{
+    color:#2b2b2b;
+}
 footer ul li:nth-child(1) em{
     background: url(../img/theme/footer-ico-01.png) center no-repeat;
     background-size: 100%;
