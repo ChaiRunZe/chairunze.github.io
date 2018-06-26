@@ -31,32 +31,32 @@
 }
 
 .box-tit ul li:nth-child(1) em {
-    background: #fdb700 url(../img/chi/chi-ico-01.png) center no-repeat;
+    background: #fdb700 url(../img/fw/box-tit-ico-01.png) center no-repeat;
     background-size: 70%
 }
 
 .box-tit ul li:nth-child(2) em {
-    background: #df233e url(../img/chi/chi-ico-02.png) center no-repeat;
+    background: #df233e url(../img/fw/box-tit-ico-02.png) center no-repeat;
     background-size: 70%
 }
 
 .box-tit ul li:nth-child(3) em {
-    background: #9bbf42 url(../img/chi/chi-ico-03.png) center no-repeat;
+    background: #9bbf42 url(../img/fw/box-tit-ico-03.png) center no-repeat;
     background-size: 70%
 }
 
 .box-tit ul li:nth-child(4) em {
-    background: #f81774 url(../img/chi/chi-ico-03.png) center no-repeat;
+    background: #f81774 url(../img/fw/box-tit-ico-04.png) center no-repeat;
     background-size: 70%
 }
 
 .box-tit ul li:nth-child(5) em {
-    background: #009aff url(../img/chi/chi-ico-03.png) center no-repeat;
+    background: #009aff url(../img/fw/box-tit-ico-05.png) center no-repeat;
     background-size: 70%
 }
 
 .box-tit ul li:nth-child(6) em {
-    background: #f8a400 url(../img/chi/chi-ico-03.png) center no-repeat;
+    background: #f8a400 url(../img/fw/box-tit-ico-06.png) center no-repeat;
     background-size: 70%
 }
 
