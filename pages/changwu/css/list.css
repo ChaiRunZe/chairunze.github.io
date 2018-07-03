@@ -1,0 +1,39 @@
+@charset "utf-8";
+.list-box {
+    width: 100%;
+    height: 100%;
+}
+
+.list-box .news {
+    width: 100%;
+    padding: 0.15rem 0.2rem;
+    box-sizing: border-box;
+}
+.list-box .news ul li {
+    line-height: 0.3rem;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0.15rem auto;
+    border-bottom: 1px solid #eeeeee
+}
+.list-box .news ul li:last-child {
+    border-bottom: none;
+}
+
+.list-box .news ul li .tit {
+    line-height: 0.3rem;
+    font-size: 0.26rem;
+    padding: 0.1rem 0;
+    color: #333333;
+    background: url(../img/site/list-ico-02.gif) left 0.18rem no-repeat;
+    text-indent: 0.2rem;
+    display: block;
+}
+
+.list-box .news ul li .time {
+    float: right;
+    font-size: 0.20rem;
+    color: #c2c2c2;
+    padding: 0.1rem 0
+}
