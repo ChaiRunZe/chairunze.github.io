@@ -1,0 +1,45 @@
+@charset "utf-8";
+.content-box {
+    overflow: hidden;
+    width: 96%;
+    height: 100%;
+    margin: 0.2rem auto;
+}
+
+.content-box .title {
+    overflow: hidden;
+}
+
+.content-box .title h1 {
+    font-size: 0.36rem;
+    line-height: 0.6rem;
+    overflow: hidden;
+    color: #2b2b2b;
+}
+
+.content-box .tags {
+    border-top: 0.02rem solid #eeeeee;
+    border-bottom: 0.02rem double #eeeeee;
+    height: 0.5rem;
+    line-height: 0.5rem;
+}
+
+.content-box .tags span {
+    color: #666666;
+    font-size: 0.18rem;
+}
+
+.content-box .tags .editor {
+    float: left;
+}
+
+.content-box .tags .time {
+    float: right;
+}
+
+.content-box .article {
+    width: 100%;
+    font-size: 0.2rem;
+    line-height: 0.36rem;
+    margin: 0.3rem auto;
+}
