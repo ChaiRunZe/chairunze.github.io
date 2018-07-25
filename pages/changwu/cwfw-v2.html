@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,user-scalable=no">
+    <title>长武服务</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/mescroll.min.css">
+    <link rel="stylesheet" href="css/cwfw.css?v=201807250009"/>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/common-wap.js"></script>
+    <script src="js/flexible.min.js"></script>
+    <script src="js/mescroll.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header><span class="header-back" onclick="javascript:history.back();"></span>我要投资</header>
+<div class="fw-box mescroll" id="mescroll">
+    <div class="box-tit">
+        <!--<h1 class="tit-title">我要投资</h1>-->
+        <div class="tit-desc">长武县地处陕西省咸阳市西北部的陕甘交界处，距省城西安约190公里，是三秦通往大西北的咽喉关隘，素有“三秦屏障”、“秦陇门户”之称，被誉为“果乡煤城”。全县辖7镇1个街道办事处146个行政村，总人口18万，总面积567平方公里，耕地面积45万亩。</div>
+    </div>
+    <div class="box-con">
+        <div class="item">
+            <div class="item-tit"><span>我要投资</span></div>
+            <div class="item-con">
+                <div id="newsList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        //创建MeScroll对象
+        var mescroll = new MeScroll("mescroll", {
+            down: {
+                auto: false, //是否在初始化完毕之后自动执行下拉回调callback; 默认true
+                callback: downCallback, //下拉刷新的回调
+                page: {num: 0, size: 12, time: 1000}
+            },
+            up: {
+                auto: true, //是否在初始化时以上拉加载的方式自动加载第一页数据; 默认false
+                callback: upCallback,//上拉回调,此处可简写; 相当于 callback: function (page) { upCallback(page); }
+                page: {num: 0, size: 12, time: 1000}
+            }
+        });
+        /*下拉刷新的回调 */
+        function downCallback(){
+            //联网加载数据
+            getListDataFromNet(0, 1, function(data){
+                //联网成功的回调,隐藏下拉刷新的状态
+                mescroll.endSuccess();
+                //设置列表数据
+                setListData(data, false);
+            }, function(){
+                //联网失败的回调,隐藏下拉刷新的状态
+                mescroll.endErr();
+            });
+        }
+
+        /*上拉加载的回调 page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+        function upCallback(page){
+            //联网加载数据
+            console.log("page.num="+page.num);
+            getListDataFromNet(page.num, page.size, function(data){
+                //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+                mescroll.endSuccess(data.length);//传参:数据的总数; mescroll会自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+                //设置列表数据
+                setListData(data, true);
+            }, function(){
+                //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+                mescroll.endErr();
+            });
+        }
+        /*设置列表数据*/
+        function setListData(data, isAppend) {
+            var listDom=document.getElementById("newsList");
+            for (var i = 0; i < data.length; i++) {
+                var newObj=data[i];
+                var str="";
+                str+="<div class=\"item-info\">";
+                str+="<p><span class=\"info-title\">"+newObj.title+"</span></p>";
+                str+="<p><span class=\"info-name\">联系人："+newObj.name+"</span><span class=\"info-phone\">联系电话："+newObj.phone+"</span><span class=\"info-time\">办公时间："+newObj.dTime+"</span></p></div>";
+                var liDom=document.createElement("div");
+                liDom.innerHTML=str;
+                if (isAppend) {
+                    listDom.appendChild(liDom);//加在列表的后面,上拉加载
+                } else{
+                    listDom.insertBefore(liDom, listDom.firstChild);//加在列表的前面,下拉刷新
+                }
+            }
+        }
+        /*联网加载列表数据*/
+        var downIndex=0;
+        function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+            //延时一秒,模拟联网
+            setTimeout(function () {
+                try{
+                    var newArr=[];
+                    if(pageNum==0){
+                        //此处模拟下拉刷新返回的数据
+                        downIndex++;
+                        var newObj={title:"【新增新闻"+downIndex+"】 新增新闻的标题", dTime:"8:00 - 12:00",name:"联系人",phone:"029-20215478"};
+                        newArr.push(newObj);
+                    }else{
+                        //此处模拟上拉加载返回的数据
+                        for (var i = 0; i < pageSize; i++) {
+                            var upIndex=(pageNum-1)*pageSize+i+1;
+                            var newObj={title:"【新闻"+upIndex+"】 标题标题标题标题标题标题", dTime:"8:00 - 12:00",name:"联系人",phone:"029-20215478"};
+                            newArr.push(newObj);
+                        }
+                    }
+                    //联网成功的回调
+                    successCallback&&successCallback(newArr);
+                }catch(e){
+                    //联网失败的回调
+                    errorCallback&&errorCallback();
+                }
+            },1000)
+        }
+        //禁止PC浏览器拖拽图片,避免与下拉刷新冲突;如果仅在移动端使用,可删除此代码
+        document.ondragstart=function() {return false;}
+    });
+</script>
+</body>
+</html>
