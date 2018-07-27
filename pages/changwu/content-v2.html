@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>内容页</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/content.css?v=2018072702">
+    <script src="js/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/TouchSlide.1.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header><span class="header-back" onclick="javascript:history.back();"></span>长武资讯</header>
+<main>
+    <div class="content-box">
+        <div class="title">
+            <h1>我是标题</h1>
+        </div>
+        <div class="tags">
+            <span class="editor">我是编辑</span>
+            <span class="time">2018-06-06</span>
+        </div>
+        <div class="picture-box" id="pictureBox">
+            <div class="slide-con">
+                <ul>
+                    <li><a class="pic"><img src="img/index/index-pic.png" alt="图片新闻1"/></a><a class="tit">图片新闻1</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-01.png" alt="图片新闻2"/></a><a class="tit">图片新闻2</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-02.png" alt="图片新闻3"/></a><a class="tit">图片新闻3</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic.png" alt="图片新闻1"/></a><a class="tit">图片新闻1</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-01.png" alt="图片新闻2"/></a><a class="tit">图片新闻2</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-02.png" alt="图片新闻3"/></a><a class="tit">图片新闻3</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic.png" alt="图片新闻1"/></a><a class="tit">图片新闻1</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-01.png" alt="图片新闻2"/></a><a class="tit">图片新闻2</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-02.png" alt="图片新闻3"/></a><a class="tit">图片新闻3</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic.png" alt="图片新闻1"/></a><a class="tit">图片新闻1</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-01.png" alt="图片新闻2"/></a><a class="tit">图片新闻2</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-02.png" alt="图片新闻3"/></a><a class="tit">图片新闻3</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic.png" alt="图片新闻1"/></a><a class="tit">图片新闻1</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-01.png" alt="图片新闻2"/></a><a class="tit">图片新闻2</a></li>
+                    <li><a class="pic"><img src="img/index/index-pic-02.png" alt="图片新闻3"/></a><a class="tit">图片新闻3</a></li>
+                </ul>
+            </div>
+            <div class="slide-tit">
+                <ul></ul>
+            </div>
+            <div class="slide-page"></div>
+        </div>
+        <script type="text/javascript">
+            TouchSlide({
+                slideCell:"#pictureBox",
+                mainCell:".slide-con ul",
+                titCell:".slide-tit ul", //开启自动分页 autoPage:true,false ，此时设置 titCell 为导航元素包裹层
+                effect:"leftLoop",
+                prevCell:"",
+                nextCell:"",
+                pageStateCell:".slide-page",//分页状态对象，用于显示分页状态，例如：2/3
+                autoPage:true,//自动分页
+                autoPlay:false //自动播放
+            });
+        </script>
+        <div class="article">
+            <div class="article-item">
+                <span class="item-name">【XXXXXX】</span>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+                正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+                正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正
+            </div>
+            <div class="article-item">
+                <span class="item-name">【XXXXXX】</span>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+                正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+                正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正
+            </div>
+            <div class="article-item">
+                <span class="item-name">【XXXXXX】</span>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+                正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+                正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
