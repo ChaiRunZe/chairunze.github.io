@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>内容页</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/content.css">
+    <script src="js/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<header><span class="header-back" onclick="javascript:history.back();"></span>长武资讯<span class="header-more" onclick="headerMore()"></span></header>
+<div class="header-more-con hide">
+    <ul>
+        <li><a href="">首<em class="blank2em"></em>页</a></li>
+        <li><a href="">生活资讯</a></li>
+        <li><a href="">服务导航</a></li>
+    </ul>
+</div>
+<main>
+    <div class="content-box">
+        <div class="title">
+            <h1>我是标题</h1>
+        </div>
+        <div class="tags">
+            <span class="editor">我是编辑</span>
+            <span class="time">2018-06-06</span>
+        </div>
+        <div class="article">
+            正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+            正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+            正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+            正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+            正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+            正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+        </div>
+    </div>
+</main>
+</body>
+<script>
+    function headerMore(){
+        var headerMore = $(".header-more-con");
+        if($(headerMore).is(":hidden")){
+            headerMore.show(400)
+        }else{
+            headerMore.hide(400)
+        }
+    }
+</script>
+</html>
+18840281500

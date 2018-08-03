@@ -1,0 +1,116 @@
+@charset "utf-8";
+main{
+    bottom: 0;
+}
+.content-box {
+    /*overflow: hidden;*/
+    width: 96%;
+    height: 100%;
+    margin: 0.2rem auto;
+}
+.picture-box{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /*width: 7.5rem;/!* 设置焦点图最大宽度 *!/*/
+    height: 3.92rem;
+    margin: 0 auto;
+}
+.picture-box .slide-page {
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    bottom: 0;
+    right: 0.2rem;
+    z-index: 1;
+    color: #fff;
+    font-size: 0.3rem;
+}
+.picture-box .slide-tit {
+    display: none;
+}
+.picture-box .slide-con {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.picture-box .slide-con li {
+    position: relative;
+    text-align: center;
+}
+
+.picture-box .slide-con li img {
+    background: url(../img/site/loading.gif) center center no-repeat;
+    vertical-align: top;
+    width: 100%; /* 图片宽度100%，达到自适应效果 */
+}
+
+.picture-box .slide-con li a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 去掉链接触摸高亮 */
+.picture-box .slide-con li .tit {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-indent: 10px;
+    height: 30px;
+    line-height: 30px;
+    background: #10000078;
+    color: #fff;
+    text-align: left;
+}
+
+.picture-box .slide-con ul li a img {
+    width: 100%;
+    height: 3.92rem;
+}
+.content-box .title {
+    overflow: hidden;
+}
+
+.content-box .title h1 {
+    font-size: 0.36rem;
+    line-height: 0.6rem;
+    overflow: hidden;
+    color: #2b2b2b;
+}
+
+.content-box .tags {
+    border-top: 0.02rem solid #eeeeee;
+    border-bottom: 0.02rem double #eeeeee;
+    height: 0.5rem;
+    line-height: 0.5rem;
+}
+
+.content-box .tags span {
+    color: #666666;
+    font-size: 0.18rem;
+}
+
+.content-box .tags .editor {
+    float: left;
+}
+
+.content-box .tags .time {
+    float: right;
+}
+
+.content-box .article {
+    width: 100%;
+    font-size: 0.2rem;
+    line-height: 0.36rem;
+    margin: 0.3rem auto;
+}
+
+.article .article-item{
+    overflow: hidden;
+    margin: 0.2rem auto;
+}
+.article-item .item-name{
+    font-size: 0.3rem;
+}
