@@ -10,9 +10,14 @@
     <script src="js/jquery-2.2.3.min.js"></script>
     <script src="js/common-wap.js"></script>
     <script src="js/flexible.min.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2ufHnIGSCvALgFI1qXmoZKiiqWV6vGuz"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=2ufHnIGSCvALgFI1qXmoZKiiqWV6vGuz"></script>
     <style>
-        #allmap{
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+        #container-map {
             width: 100%;
             height: 100%;
         }
@@ -21,39 +26,65 @@
 <body>
 <header><span class="header-back" onclick="javascript:history.back()"></span>服务导航</header>
 <main>
-    <div id="allmap"></div>
+    <div id="container"></div>
 </main>
 <footer>
     <ul>
-        <li><a href="/pages/changwu/"><em></em><p>首页</p></a></li>
-        <li><em></em><p>生活资讯</p></li>
-        <li class="hover"><em></em><p>服务导航</p></li>
+        <li><a href="/pages/changwu/"><em></em>
+
+            <p>首页</p></a></li>
+        <li><em></em>
+
+            <p>生活资讯</p></li>
+        <li class="hover"><em></em>
+
+            <p>服务导航</p></li>
     </ul>
 </footer>
 </body>
 </html>
 <script type="text/javascript">
-    // 百度地图API功能
-    var map = new BMap.Map("allmap");
-    map.centerAndZoom("咸阳市长武县", 12);
-//    map.enableScrollWheelZoom(true);
-    function getBoundary(){
-        var bdary = new BMap.Boundary();
-        bdary.get("咸阳市长武县", function(rs){//获取行政区域
-            map.clearOverlays();//清除地图覆盖物
-            var count = rs.boundaries.length; //行政区域的点有多少个
-            if (count === 0) {
-                //alert('未能获取当前输入行政区域');
-                return ;
-            }
-            var pointArray = [];
-            for (var i = 0; i < count; i++) {
-                var ply = new BMap.Polygon(rs.boundaries[i], {strokeWeight: 2, strokeColor: "#ff0000"}); //建立多边形覆盖物
-                map.addOverlay(ply);  //添加覆盖物
-                pointArray = pointArray.concat(ply.getPath());
-            }
-            map.setViewport(pointArray);//调整视野
-        });
-    }
-    getBoundary();
+    var map = new BMap.Map("container");
+    var point = new BMap.Point(107.805317, 35.211748);
+    map.centerAndZoom(point, 16);
+    map.enableScrollWheelZoom(true);
+
+    var myIcon = new BMap.Icon("myicon.png",new BMap.Size(30,30),{
+        anchor: new BMap.Size(10,10)
+    });
+
+    var marker=new BMap.Marker(point,{icon: myIcon});
+    map.addOverlay(marker);
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function(r){
+        if(this.getStatus() == BMAP_STATUS_SUCCESS){
+            var mk = new BMap.Marker(r.point);
+            map.addOverlay(mk);
+            //map.panTo(r.point);//地图中心点移到当前位置
+            var latCurrent = r.point.lat;
+            var lngCurrent = r.point.lng;
+            //alert('我的位置：'+ latCurrent + ',' + lngCurrent);
+            var mapUrl = "http://api.map.baidu.com/direction?origin="+latCurrent+","+lngCurrent+"&destination=35.211748,107.805317&mode=driving&region=长武县&output=html";
+//            location.href = mapUrl;
+            $("#container").empty().append("<iframe id=\"container-map\" src=\""+mapUrl+"\"></iframe>");
+
+        }
+        else {
+            alert('failed'+this.getStatus());
+        }
+    },{enableHighAccuracy: true});
+    map.addOverlay(marker);
+
+    var licontent="<b>长武县人民政府</b><br>";
+    licontent+="<span><strong>地址：</strong>陕西省咸阳市长武县东大街3号</span><br>";
+    licontent+="<span><strong>电话：</strong>(029)34202586</span><br>";
+    var opts = {
+        width : 200,
+        height: 100
+    };
+    var  infoWindow = new BMap.InfoWindow(licontent, opts);
+    marker.openInfoWindow(infoWindow);
+    marker.addEventListener('click',function(){
+        marker.openInfoWindow(infoWindow);
+    });
 </script>
